@@ -1,0 +1,26 @@
+EDA.py
+The EDA file takes in the December-2022-revised-110523-iii999.csv CSV.
+Upon looking at the file it is clear that the vast majority (~98%) of Emergency admissions from A&E are from Type 1.
+Additionally the majority of A&E attendances over 4hrs are from type 1. Given type one A&E visits are very different
+from other visits it makes sense to consider them separately. As they are also the most important in terms of 
+strain on the NHS I focused on Organisations with Type 1 attendances for this exercise.
+
+Taking this set of organisations I create a few simple metrics of the performance of the organisation. These were the
+propotion of people waiting over 4 hrs for admission. The proportion of people waiting over 12 hrs for admission
+and proportion of Type 1 attendances over 4 hours. I saved out these performance metric to a new file that was 
+used in the dash dashboard
+
+dash_dashboard.py 
+This dashboard plots these performance metrics for each organsiation with Type 1 admissions. We can see from
+the dashboard that there is considerable variance between different departments performance.
+
+There are several organisations that have 0 attendances over 4 hours and others that have 0 people waiting over
+4 hours for admission. Given the data from other organisations these results seem suspicious and should be investigated
+further to check the quality of the data.
+
+The departments with people waiting over 12 hours for admission shows the largest range between organisations performance.
+This looks like a good metric to identify organisations that are struggling.
+
+Further graphs that would be helpful would be similar results and metrics grouped by trust to see if there are any trusts underperforming. 
+2D heat maps showing which deparments are struggling against several metrics.
+Graphs showing the total number of attendances with the number of attedances over 4 hours highlighted.
